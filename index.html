@@ -3,16 +3,24 @@
 
 <head>
 
+    <!-- ================= META ================= -->
+
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ranga Prasad | Python Full Stack Developer</title>
 
     <meta name="description"
-        content="Python Full Stack Developer Portfolio">
+        content="Portfolio of Ranga Prasad, Python Full Stack Developer specializing in Flask, FastAPI, SQL, JavaScript and Responsive Web Development.">
 
-    <!-- GOOGLE FONT -->
+    <meta name="keywords"
+        content="Python Developer, Flask Developer, FastAPI, Full Stack Developer, Portfolio, SQL, HTML CSS JavaScript">
+
+    <meta name="author"
+        content="Ranga Prasad">
+
+    <!-- Google Font -->
 
     <link rel="preconnect"
         href="https://fonts.googleapis.com">
@@ -24,99 +32,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- FONT AWESOME -->
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
 
     <link rel="stylesheet"
-        href="styles.css">
+        href="css/style.css">
+
+    <link rel="stylesheet"
+        href="css/responsive.css">
+
+    <link rel="stylesheet"
+        href="css/animations.css">
 
 </head>
 
 <body>
 
-<!--====================-->
-<!-- Animated Background -->
-<!--====================-->
+<!--================ LOADER ================-->
 
-<div class="background">
+<div id="loader">
 
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="loader-content">
 
-</div>
+        <h1>RP</h1>
 
-<!--====================-->
-<!-- HEADER -->
-<!--====================-->
+        <div class="loader-bar">
 
-<header class="header">
-
-    <div class="container">
-
-        <a href="#home"
-            class="logo">
-
-            Ranga Prasad
-
-        </a>
-
-        <nav id="navMenu">
-
-            <ul>
-
-                <li><a href="#home" class="active">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#skills">Skills</a></li>
-
-                <li><a href="#projects">Projects</a></li>
-
-                <li><a href="#resume">Resume</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-        <div class="nav-buttons">
-
-            <button id="themeBtn">
-
-                <i class="fa-solid fa-moon"></i>
-
-            </button>
-
-            <button id="menuBtn">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
+            <span></span>
 
         </div>
 
     </div>
 
+</div>
+
+<!--================ BACKGROUND ================-->
+
+<div class="background">
+
+    <div class="gradient"></div>
+
+    <div class="grid"></div>
+
+    <div class="particles"></div>
+
+</div>
+
+<!--================ HEADER ================-->
+
+<header class="header">
+
+<div class="container">
+
+<a href="#home"
+class="logo">
+
+RP<span>.</span>
+
+</a>
+
+<nav class="navbar"
+id="navbar">
+
+<ul>
+
+<li>
+
+<a href="#home"
+class="active">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#about">
+
+About
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#skills">
+
+Skills
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#experience">
+
+Experience
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#projects">
+
+Projects
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#certificates">
+
+Certificates
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#contact">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="header-buttons">
+
+<button id="theme-toggle">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<div id="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</div>
+
+</div>
+
 </header>
 
-<!--====================-->
-<!-- HERO -->
-<!--====================-->
+<!--================ HERO SECTION ================-->
 
-<section id="home"
-    class="hero">
+<section class="hero"
+id="home">
 
-<div class="container hero-grid">
+<div class="container hero-container">
 
-<div class="hero-left">
+<div class="hero-content">
 
 <span class="badge">
 
@@ -124,46 +210,45 @@ Available for Full Time Opportunities
 
 </span>
 
+<h3>
+
+Hello, I'm
+
+</h3>
+
 <h1>
 
-Hi,
-
-I'm
-
-<span>
-
-Ranga Prasad
-
-</span>
+Ranga <span>Prasad</span>
 
 </h1>
 
 <h2>
 
-Python Full Stack Developer
+<span class="typing"></span>
 
 </h2>
 
 <p>
 
-Passionate Full Stack Developer skilled in Python, Flask,
-React.js, MySQL and REST APIs.
+Passionate Python Full Stack Developer skilled in developing scalable
+web applications using Python, Flask, FastAPI, SQL,
+HTML, CSS and JavaScript.
 
-I enjoy building modern, responsive and scalable web
-applications that solve real-world problems.
+I enjoy solving real-world problems by building secure,
+responsive and user-friendly applications.
 
 </p>
 
 <div class="hero-buttons">
 
 <a href="#projects"
-class="btn primary">
+class="btn">
 
 View Projects
 
 </a>
 
-<a href="resume.pdf"
+<a href="resume/resume.pdf"
 download
 class="btn secondary">
 
@@ -173,700 +258,1168 @@ Download Resume
 
 </div>
 
-<div class="stats">
+<div class="social-icons">
 
-<div class="card">
+<a href="https://github.com/rangaprasadalumolu"
+target="_blank">
 
-<h3>2+</h3>
+<i class="fa-brands fa-github"></i>
 
-<p>Projects</p>
+</a>
 
-</div>
+<a href="https://linkedin.com"
+target="_blank">
 
-<div class="card">
+<i class="fa-brands fa-linkedin"></i>
 
-<h3>10+</h3>
+</a>
 
-<p>Technologies</p>
+<a href="mailto:example@gmail.com">
 
-</div>
-
-<div class="card">
-
-<h3>2025</h3>
-
-<p>Graduate</p>
-
-</div>
-
-<div class="card">
-
-<h3>100%</h3>
-
-<p>Dedication</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="profile-card">
-
-<img src="./ranga_photo.jpeg"
-alt="Profile">
-
-<div class="floating one">
-
-Python
-
-</div>
-
-<div class="floating two">
-
-Flask
-
-</div>
-
-<div class="floating three">
-
-React
-
-</div>
-
-<div class="floating four">
-
-MySQL
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- ABOUT -->
-<!--====================-->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-
-ABOUT ME
-
-</span>
-
-<h2>
-
-Who Am I?
-
-</h2>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-image">
-
-<img src="./ranga_photo.jpeg" alt="Profile">
-
-</div>
-
-<div class="about-content">
-
-<h3>
-
-Python Full Stack Developer
-
-</h3>
-
-<p>
-
-I'm a passionate Python Full Stack Developer and a
-B.Tech graduate in Electronics and Communication
-Engineering from NRI Institute of Technology.
-
-</p>
-
-<p>
-
-I enjoy developing secure, scalable and responsive
-web applications using Python, Flask, React.js,
-MySQL and modern frontend technologies.
-
-</p>
-
-<p>
-
-I continuously improve my skills by building
-real-world projects, learning new technologies
-and solving coding challenges.
-
-</p>
-
-<div class="about-cards">
-
-<div class="info">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
-<div>
-
-<h4>
-
-Education
-
-</h4>
-
-<p>
-
-B.Tech (ECE)
-
-</p>
-
-</div>
-
-</div>
-
-<div class="info">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<div>
-
-<h4>
-
-Location
-
-</h4>
-
-<p>
-
-Hyderabad, India
-
-</p>
-
-</div>
-
-</div>
-
-<div class="info">
-
-<i class="fa-solid fa-laptop-code"></i>
-
-<div>
-
-<h4>
-
-Experience
-
-</h4>
-
-<p>
-
-Python Full Stack Fresher
-
-</p>
-
-</div>
-
-</div>
-
-<div class="info">
-
-<i class="fa-solid fa-briefcase"></i>
-
-<div>
-
-<h4>
-
-Open To
-
-</h4>
-
-<p>
-
-Full Time Jobs
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!--====================-->
-<!-- SKILLS -->
-<!--====================-->
-
-<section id="skills">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>MY SKILLS</span>
-
-<h2>Technical Skills</h2>
-
-</div>
-
-<div class="skills-grid">
-
-<!-- Programming -->
-
-<div class="skill-card">
-
-<h3>Programming</h3>
-
-<div class="skill">
-<span>Python</span>
-<div class="progress"><div class="progress-bar" data-width="85%"></div></div>
-</div>
-
-<div class="skill">
-<span>JavaScript</span>
-<div class="progress"><div class="progress-bar" data-width="75%"></div></div>
-</div>
-
-<div class="skill">
-<span>SQL</span>
-<div class="progress"><div class="progress-bar" data-width="80%"></div></div>
-</div>
-
-<div class="skill">
-<span>C</span>
-<div class="progress"><div class="progress-bar" data-width="70%"></div></div>
-</div>
-
-</div>
-
-<!-- Frontend -->
-
-<div class="skill-card">
-
-<h3>Frontend</h3>
-
-<div class="skill">
-<span>HTML5</span>
-<div class="progress"><div class="progress-bar" data-width="92%"></div></div>
-</div>
-
-<div class="skill">
-<span>CSS3</span>
-<div class="progress"><div class="progress-bar" data-width="90%"></div></div>
-</div>
-
-<div class="skill">
-<span>Bootstrap</span>
-<div class="progress"><div class="progress-bar" data-width="88%"></div></div>
-</div>
-
-<div class="skill">
-<span>React.js</span>
-<div class="progress"><div class="progress-bar" data-width="72%"></div></div>
-</div>
-
-</div>
-
-<!-- Backend -->
-
-<div class="skill-card">
-
-<h3>Backend</h3>
-
-<div class="skill">
-<span>Flask</span>
-<div class="progress"><div class="progress-bar" data-width="82%"></div></div>
-</div>
-
-<div class="skill">
-<span>REST APIs</span>
-<div class="progress"><div class="progress-bar" data-width="80%"></div></div>
-</div>
-
-<div class="skill">
-<span>Authentication</span>
-<div class="progress"><div class="progress-bar" data-width="78%"></div></div>
-</div>
-
-<div class="skill">
-<span>MySQL</span>
-<div class="progress"><div class="progress-bar" data-width="82%"></div></div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- EXPERIENCE -->
-<!--====================-->
-
-<section id="experience">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>EXPERIENCE</span>
-
-<h2>Training Journey</h2>
-
-</div>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<span>Oct 2025 – Feb 2026</span>
-
-<h3>Python Full Stack Trainee</h3>
-
-<h4>Codegnan IT Solutions</h4>
-
-<p>
-
-Completed intensive Python Full Stack training covering
-Flask, React.js, MySQL, REST APIs, Authentication,
-Responsive Design and GitHub.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- PROJECTS -->
-<!--====================-->
-
-<section id="projects">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>PROJECTS</span>
-
-<h2>Featured Projects</h2>
-
-</div>
-
-<div class="projects-grid">
-
-<!-- Project 1 -->
-
-<div class="project-card">
-
-<img src="./ecommerce.png" alt="E-Commerce Website">
-
-<div class="project-content">
-
-<h3>E-Commerce Website</h3>
-
-<p>
-
-Modern Full Stack E-Commerce Application built using
-Python, Flask, SQLite, HTML, CSS and JavaScript.
-
-Features secure login, cart, Razorpay payment,
-admin dashboard and responsive UI.
-
-</p>
-
-<div class="tech">
-
-<span>Python</span>
-
-<span>Flask</span>
-
-<span>SQLite</span>
-
-<span>JavaScript</span>
-
-</div>
-
-<div class="project-buttons">
-
-<a href="#">Live Demo</a>
-
-<a href="#">GitHub</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Project 2 -->
-
-<div class="project-card">
-
-<img src="./atm.png" alt="ATM Management System">
-
-<div class="project-content">
-
-<h3>ATM Management System</h3>
-
-<p>
-
-Banking application developed using Flask and MySQL.
-
-Supports Login, Deposit, Withdrawal,
-Balance Enquiry and Transaction History.
-
-</p>
-
-<div class="tech">
-
-<span>Python</span>
-
-<span>Flask</span>
-
-<span>MySQL</span>
-
-<span>REST API</span>
-
-</div>
-
-<div class="project-buttons">
-
-<a href="#">Live Demo</a>
-
-<a href="#">GitHub</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- CERTIFICATES -->
-<!--====================-->
-
-<section id="certificates">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>CERTIFICATES</span>
-
-<h2>Achievements</h2>
-
-</div>
-
-<div class="certificate-grid">
-
-<div class="certificate-card">
-
-<img src="./python_certificate.jpeg">
-
-<h3>Python Programming</h3>
-
-<p>HackerRank</p>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="./cloud_certificate.jpeg">
-
-<h3>Cloud Computing</h3>
-
-<p>Infosys Springboard</p>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="./java_fullstack_certificate.jpeg">
-
-<h3>Java Full Stack</h3>
-
-<p>Wipro TalentNext</p>
-
-</div>
-
-<div class="certificate-card">
-
-<img src="./Nptel online certification.jpg">
-
-<h3>Introduction to Internet of Things</h3>
-
-<p>NPTEL Online Certification</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- RESUME -->
-<!--====================-->
-
-<section id="resume">
-
-<div class="container">
-
-<div class="resume-box">
-
-<h2>Download My Resume</h2>
-
-<p>
-
-Click below to download the latest ATS-friendly Resume.
-
-</p>
-
-<a href="resume.pdf"
-
-download
-
-class="btn primary">
-
-Download Resume
+<i class="fa-solid fa-envelope"></i>
 
 </a>
 
 </div>
 
-</div>
+<div class="hero-stats">
 
-</section>
-
-<!--====================-->
-<!-- CONTACT -->
-<!--====================-->
-
-<section id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>CONTACT</span>
-
-<h2>Get In Touch</h2>
-
-</div>
-
-<form id="contactForm">
-
-<input
-type="text"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-placeholder="Your Email"
-required>
-
-<textarea
-placeholder="Your Message"
-rows="6"
-required></textarea>
-
-<button
-type="submit"
-class="btn primary">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!--====================-->
-<!-- FOOTER -->
-<!--====================-->
-
-<footer>
-
-<div class="container footer">
+<div>
 
 <h2>
 
-Ranga Prasad
+4+
 
 </h2>
 
 <p>
 
-Python Full Stack Developer
-
-</p>
-
-<div class="social">
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fas fa-envelope"></i></a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 All Rights Reserved.
+Projects
 
 </p>
 
 </div>
+
+<div>
+
+<h2>
+
+15+
+
+</h2>
+
+<p>
+
+Technologies
+
+</p>
+
+</div>
+
+<div>
+
+<h2>
+
+100%
+
+</h2>
+
+<p>
+
+Responsive
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="image-card">
+
+<img src="images/ranga_photo.jpeg"
+alt="Ranga Prasad">
+
+<div class="floating python">
+
+Python
+
+</div>
+
+<div class="floating flask">
+
+Flask
+
+</div>
+
+<div class="floating fastapi">
+
+FastAPI
+
+</div>
+
+<div class="floating sql">
+
+SQL
+
+</div>
+
+<div class="floating html">
+
+HTML
+
+</div>
+
+<div class="floating css">
+
+CSS
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+<a href="#about">
+
+<i class="fa-solid fa-angles-down"></i>
+
+</a>
+
+</div>
+
+</section>
+<!--==================== ABOUT ====================-->
+
+<section class="about section" id="about">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>ABOUT ME</span>
+
+            <h2>Who I Am</h2>
+
+            <p>
+                Passionate about building scalable, secure and user-friendly web
+                applications with modern technologies.
+            </p>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img src="images/ranga_photo.jpeg" alt="About Image">
+
+            </div>
+
+            <div class="about-content">
+
+                <h3>Python Full Stack Developer</h3>
+
+                <p>
+
+                    I am a motivated Python Full Stack Developer with strong
+                    knowledge of Python, Flask, FastAPI, SQL,
+                    HTML, CSS and JavaScript.
+
+                    I enjoy creating real-world applications,
+                    learning modern technologies and solving challenging
+                    problems with clean and efficient code.
+
+                </p>
+
+                <div class="about-details">
+
+                    <div class="detail-box">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <h4>Projects</h4>
+
+                        <span>4+</span>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        <h4>Technologies</h4>
+
+                        <span>15+</span>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <h4>Experience</h4>
+
+                        <span>Python Full Stack Training</span>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <h4>Location</h4>
+
+                        <span>Hyderabad</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== EDUCATION ====================-->
+
+<section class="education section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>EDUCATION</span>
+
+            <h2>Academic Journey</h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>2021 - 2025</span>
+
+                    <h3>B.Tech - Electronics & Communication Engineering</h3>
+
+                    <h4>NRI Institute of Technology</h4>
+
+                    <p>
+
+                        Successfully completed Bachelor of Technology with
+                        strong interest in Software Development,
+                        Python Programming and Full Stack Development.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+
+                    <i class="fa-solid fa-laptop"></i>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>2025 - 2026</span>
+
+                    <h3>Python Full Stack Training</h3>
+
+                    <h4>Codegnan IT Solutions</h4>
+
+                    <p>
+
+                        Hands-on training in Python,
+                        Flask,
+                        FastAPI,
+                        SQL,
+                        HTML,
+                        CSS,
+                        JavaScript,
+                        REST APIs,
+                        Git,
+                        GitHub,
+                        Deployment and Full Stack Development.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== SKILLS ====================-->
+
+<section class="skills section" id="skills">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>SKILLS</span>
+
+            <h2>Technical Skills</h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <i class="fa-brands fa-python"></i>
+
+                <h3>Programming</h3>
+
+                <p>
+
+                    Python<br>
+
+                    Java<br>
+
+                    JavaScript
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-server"></i>
+
+                <h3>Backend</h3>
+
+                <p>
+
+                    Flask<br>
+
+                    FastAPI<br>
+
+                    REST APIs
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>Frontend</h3>
+
+                <p>
+
+                    HTML5<br>
+
+                    CSS3<br>
+
+                    Bootstrap<br>
+
+                    JavaScript
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>Database</h3>
+
+                <p>
+
+                    MySQL<br>
+
+                    SQLite<br>
+
+                    SQL
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-brands fa-github"></i>
+
+                <h3>Tools</h3>
+
+                <p>
+
+                    Git<br>
+
+                    GitHub<br>
+
+                    VS Code<br>
+
+                    Postman
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                <h3>Deployment</h3>
+
+                <p>
+
+                    Render<br>
+
+                    Vercel<br>
+
+                    Netlify
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== TECH STACK ====================-->
+
+<section class="tech-stack">
+
+    <div class="container">
+
+        <div class="tech-slider">
+
+            <span>Python</span>
+
+            <span>Flask</span>
+
+            <span>FastAPI</span>
+
+            <span>REST API</span>
+
+            <span>MySQL</span>
+
+            <span>SQLite</span>
+
+            <span>HTML5</span>
+
+            <span>CSS3</span>
+
+            <span>Bootstrap</span>
+
+            <span>JavaScript</span>
+
+            <span>Git</span>
+
+            <span>GitHub</span>
+
+            <span>Render</span>
+
+            <span>Vercel</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== EXPERIENCE STARTS NEXT ====================-->
+<!--==================== EXPERIENCE ====================-->
+
+<section class="experience section" id="experience">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>EXPERIENCE</span>
+
+            <h2>Professional Journey</h2>
+
+            <p>
+                My learning journey through Python Full Stack Development.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <div class="experience-left">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+            </div>
+
+            <div class="experience-right">
+
+                <span class="experience-date">
+
+                    Oct 2025 – Apr 2026
+
+                </span>
+
+                <h3>
+
+                    Python Full Stack Trainee
+
+                </h3>
+
+                <h4>
+
+                    Codegnan IT Solutions
+
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Developed responsive full-stack web applications using
+                        Python, Flask, HTML, CSS and JavaScript.
+                    </li>
+
+                    <li>
+                        Built REST APIs, CRUD modules and secure authentication
+                        systems.
+                    </li>
+
+                    <li>
+                        Integrated MySQL and SQLite databases with backend
+                        applications.
+                    </li>
+
+                    <li>
+                        Deployed projects on Render and Vercel using GitHub.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== PROJECTS ====================-->
+
+<section class="projects section" id="projects">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>PROJECTS</span>
+
+            <h2>Featured Projects</h2>
+
+            <p>
+
+                Real-world applications developed using modern web technologies.
+
+            </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <img src="./images/ecommerce.png"
+                    alt="E-Commerce">
+
+                <div class="project-content">
+
+                    <h3>
+
+                        E-Commerce Platform
+
+                    </h3>
+
+                    <p>
+
+                        Full Stack E-Commerce application featuring authentication,
+                        product catalog, shopping cart, Razorpay payment integration,
+                        order management and responsive UI.
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Python</span>
+
+                        <span>Flask</span>
+
+                        <span>MySQL</span>
+
+                        <span>Bootstrap</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <img src="images/atm.png"
+                    alt="ATM">
+
+                <div class="project-content">
+
+                    <h3>
+
+                        ATM Management System
+
+                    </h3>
+
+                    <p>
+
+                        Secure banking application implementing account creation,
+                        deposits, withdrawals, balance enquiry,
+                        transaction history and PIN verification.
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Python</span>
+
+                        <span>Flask</span>
+
+                        <span>SQLite</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <img src="./images/ats_resume_analyzer.jpg"
+                    alt="ATS Resume Analyzer">
+
+                <div class="project-content">
+
+                    <h3>
+
+                        ATS Resume Analyzer
+
+                    </h3>
+
+                    <p>
+
+                        AI-powered resume analyzer that evaluates ATS compatibility,
+                        extracts skills, provides score analysis and personalized
+                        resume improvement suggestions.
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Python</span>
+
+                        <span>Flask</span>
+
+                        <span>AI</span>
+
+                        <span>NLP</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================== GITHUB REPOSITORIES ====================-->
+
+<section class="github-projects" id="github">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>GITHUB</span>
+
+            <h2>Latest Repositories</h2>
+
+            <p>
+                These repositories are fetched automatically from GitHub.
+            </p>
+
+        </div>
+
+        <div id="githubRepos" class="github-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== GITHUB ====================-->
+
+<section class="github section">
+
+    <div class="container">
+
+        <div class="github-card">
+
+            <div>
+
+                <h2>
+
+                    Explore More Projects
+
+                </h2>
+
+                <p>
+
+                    Visit my GitHub profile to explore more full-stack,
+                    backend and Python projects.
+
+                </p>
+
+            </div>
+
+            <a href="https://github.com/rangaprasadalumolu"
+                target="_blank"
+                class="btn">
+
+                <i class="fa-brands fa-github"></i>
+
+                Visit GitHub
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== ACHIEVEMENTS START NEXT ====================-->
+<!--==================== ACHIEVEMENTS ====================-->
+
+<section class="achievements section" id="achievements">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>ACHIEVEMENTS</span>
+
+            <h2>Achievements & Activities</h2>
+
+            <p>Certifications, workshops and technical accomplishments.</p>
+
+        </div>
+
+        <div class="achievement-grid">
+
+            <div class="achievement-card">
+
+                <i class="fa-solid fa-award"></i>
+
+                <h3>Python Full Stack</h3>
+
+                <p>
+                    Successfully completed Python Full Stack Training from
+                    Codegnan IT Solutions with hands-on project experience.
+                </p>
+
+            </div>
+
+            <div class="achievement-card">
+
+                <i class="fa-solid fa-medal"></i>
+
+                <h3>Skill India</h3>
+
+                <p>
+                    Successfully completed Skill India certification program
+                    and enhanced practical software development skills.
+                </p>
+
+            </div>
+
+            <div class="achievement-card">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h3>Technical Projects</h3>
+
+                <p>
+                    Developed multiple full-stack applications including
+                    E-Commerce Platform, ATM Management System and
+                    ATS Resume Analyzer.
+                </p>
+
+            </div>
+
+            <div class="achievement-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Continuous Learning</h3>
+
+                <p>
+                    Regularly improving backend, frontend and cloud deployment
+                    skills through practical development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== CERTIFICATES ====================-->
+
+<section class="certificates section" id="certificates">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>CERTIFICATES</span>
+
+            <h2>My Certifications</h2>
+
+        </div>
+
+        <div class="certificate-grid">
+
+            <div class="certificate-card">
+
+                <img src="images/python_certificate.jpeg" alt="Python Certificate">
+
+                <h3>Python Full Stack</h3>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <img src="images/java_fullstack_certificate.jpeg" alt="Java Certificate">
+
+                <h3>Java Full Stack</h3>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <img src="images/cloud_certificate.jpeg" alt="Cloud Certificate">
+
+                <h3>Cloud Computing</h3>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <img src="images/Nptel online certification.jpg" alt="NPTEL">
+
+                <h3>NPTEL Certification</h3>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <img src="images/skill_india_certificate.jpeg" alt="Skill India">
+
+                <h3>Skill India</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== RESUME ====================-->
+
+<section class="resume section" id="resume">
+
+    <div class="container">
+
+        <div class="resume-card">
+
+            <h2>Download My Resume</h2>
+
+            <p>
+
+                Interested in my profile?
+                Download my latest ATS-friendly resume.
+
+            </p>
+
+            <a href="resume/resume.pdf"
+               class="btn"
+               download>
+
+                <i class="fa-solid fa-download"></i>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== CONTACT ====================-->
+
+<section class="contact section" id="contact">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>CONTACT</span>
+
+            <h2>Let's Connect</h2>
+
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <h3>Email</h3>
+
+                    <p>alumolurangaprasad1@gmail.com</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h3>Phone</h3>
+
+                    <p>+91 9392646859</p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3>Location</h3>
+
+                    <p>Hyderabad, Telangana</p>
+
+                </div>
+
+            </div>
+
+            <form class="contact-form">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required>
+
+                <input
+                    type="text"
+                    placeholder="Subject">
+
+                <textarea
+                    rows="6"
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="btn">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================== FOOTER ====================-->
+
+<footer>
+
+    <div class="container">
+
+        <h2>
+
+            Ranga Prasad
+
+        </h2>
+
+        <p>
+
+            Python Full Stack Developer
+
+        </p>
+
+        <div class="footer-social">
+
+            <a href="https://github.com/rangaprasadalumolu" target="_blank">
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/rangaprasadalumolu" target="_blank">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+
+            <a href="mailto:alumolurangaprasad1@gmail.com">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 Ranga Prasad. All Rights Reserved.
+
+        </p>
+
+    </div>
 
 </footer>
 
-<script src="script.js"></script>
+<!--==================== BACK TO TOP ====================-->
+
+<a href="#home" class="scroll-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</a>
+
+<!--==================== JAVASCRIPT ====================-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init("Bc3iBZkAMkDTy0dLa");
+
+</script>
+
+<script src="js/main.js"></script>
+<script src="js/typing.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/github.js"></script>
+<script src="js/contact.js"></script>
 
 </body>
-
 </html>
