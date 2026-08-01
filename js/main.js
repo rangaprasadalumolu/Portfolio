@@ -1,10 +1,36 @@
-/*=========================================
-LOADER
-=========================================*/
+/*==================================================
+                DOM ELEMENTS
+==================================================*/
+
+const body = document.body;
+
+const header = document.querySelector(".header");
+
+const menuBtn = document.getElementById("menu-btn");
+
+const navbar = document.querySelector(".navbar");
+
+const themeBtn = document.getElementById("theme-toggle");
+
+const scrollTopBtn = document.querySelector(".scroll-top");
+
+const progressBar = document.getElementById("progress-bar");
+
+const loader = document.getElementById("loader");
+
+const year = document.querySelector(".year");
+
+const gradientOne = document.querySelector(".gradient-one");
+
+const gradientTwo = document.querySelector(".gradient-two");
+
+/*==================================================
+                LOADER
+==================================================*/
 
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("loader");
+    if (!loader) return;
 
     setTimeout(() => {
 
@@ -12,69 +38,92 @@ window.addEventListener("load", () => {
 
         loader.style.visibility = "hidden";
 
-    }, 1200);
+    }, 900);
 
 });
 
-/*=========================================
-MOBILE MENU
-=========================================*/
+/*==================================================
+                CURRENT YEAR
+==================================================*/
 
-const menuBtn = document.getElementById("menu-btn");
+if(year){
 
-const navbar = document.querySelector(".navbar");
+    year.textContent = new Date().getFullYear();
+
+}
+
+/*==================================================
+                MOBILE MENU
+==================================================*/
 
 if(menuBtn){
 
-    menuBtn.addEventListener("click",()=>{
+menuBtn.addEventListener("click",()=>{
 
-        navbar.classList.toggle("active");
+navbar.classList.toggle("active");
 
-        menuBtn.innerHTML = navbar.classList.contains("active")
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
+menuBtn.innerHTML = navbar.classList.contains("active")
 
-    });
+? '<i class="fa-solid fa-xmark"></i>'
+
+: '<i class="fa-solid fa-bars"></i>';
+
+});
 
 }
 
 document.querySelectorAll(".navbar a").forEach(link=>{
 
-    link.addEventListener("click",()=>{
+link.addEventListener("click",()=>{
 
-        navbar.classList.remove("active");
+navbar.classList.remove("active");
 
-        menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
-
-    });
+menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
 
 });
 
-/*=========================================
-STICKY HEADER
-=========================================*/
-
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>50){
-
-        header.classList.add("sticky");
-
-    }
-
-    else{
-
-        header.classList.remove("sticky");
-
-    }
-
 });
 
-/*=========================================
-ACTIVE NAVIGATION
-=========================================*/
+/*==================================================
+                THEME TOGGLE
+==================================================*/
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme==="light"){
+
+body.classList.add("light-theme");
+
+themeBtn.querySelector("i").className="fa-solid fa-sun";
+
+}
+
+themeBtn?.addEventListener("click",()=>{
+
+body.classList.toggle("light-theme");
+
+const icon = themeBtn.querySelector("i");
+
+if(body.classList.contains("light-theme")){
+
+icon.className="fa-solid fa-sun";
+
+localStorage.setItem("theme","light");
+
+}
+
+else{
+
+icon.className="fa-solid fa-moon";
+
+localStorage.setItem("theme","dark");
+
+}
+
+});
+/*==================================================
+            SCROLL EVENTS
+==================================================*/
 
 const sections = document.querySelectorAll("section");
 
@@ -82,253 +131,249 @@ const navLinks = document.querySelectorAll(".navbar a");
 
 window.addEventListener("scroll",()=>{
 
-    let current="";
+const scrollY = window.pageYOffset;
 
-    sections.forEach(section=>{
+/* Sticky Header */
 
-        const sectionTop = section.offsetTop-120;
+header.classList.toggle("sticky",scrollY>40);
 
-        const sectionHeight = section.clientHeight;
+/* Scroll Top Button */
 
-        if(scrollY>=sectionTop){
+if(scrollTopBtn){
 
-            current = section.getAttribute("id");
+scrollTopBtn.style.opacity = scrollY>500 ? "1":"0";
 
-        }
+scrollTopBtn.style.pointerEvents =
 
-    });
+scrollY>500 ? "auto":"none";
 
-    navLinks.forEach(link=>{
+}
 
-        link.classList.remove("active");
+/* Progress Bar */
 
-        if(link.getAttribute("href")==="#"+current){
+if(progressBar){
 
-            link.classList.add("active");
+const height =
 
-        }
+document.documentElement.scrollHeight -
 
-    });
+window.innerHeight;
 
-});
+const progress =
 
-/*=========================================
-SCROLL TO TOP
-=========================================*/
+(scrollY/height)*100;
 
-const scrollBtn=document.querySelector(".scroll-top");
+progressBar.style.width = progress+"%";
 
-window.addEventListener("scroll",()=>{
+}
 
-    if(window.scrollY>500){
+/* Active Navigation */
 
-        scrollBtn.style.opacity="1";
+let current="";
 
-        scrollBtn.style.pointerEvents="auto";
+sections.forEach(section=>{
 
-    }
+const top = section.offsetTop-140;
 
-    else{
+if(scrollY>=top){
 
-        scrollBtn.style.opacity="0";
+current = section.id;
 
-        scrollBtn.style.pointerEvents="none";
-
-    }
+}
 
 });
 
-/*=========================================
-SMOOTH SCROLL
-=========================================*/
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+/*==================================================
+        REVEAL ANIMATION
+==================================================*/
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+
+threshold:.15
+
+});
+
+document.querySelectorAll(
+
+".section-header,.detail-box,.skill-card,.timeline-item,.experience-card,.project-card,.achievement-card,.certificate-card,.resume-card,.contact-card"
+
+).forEach(el=>{
+
+observer.observe(el);
+
+});
+
+/*==================================================
+        COUNTER ANIMATION
+==================================================*/
+
+const counters = document.querySelectorAll(".stat-card h2");
+
+const counterObserver = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(!entry.isIntersecting) return;
+
+const counter = entry.target;
+
+const value = parseInt(counter.textContent);
+
+if(isNaN(value)) return;
+
+let count = 0;
+
+const speed = value/70;
+
+function update(){
+
+count += speed;
+
+if(count<value){
+
+counter.textContent=Math.floor(count)+"+";
+
+requestAnimationFrame(update);
+
+}
+
+else{
+
+counter.textContent=value+"+";
+
+}
+
+}
+
+update();
+
+counterObserver.unobserve(counter);
+
+});
+
+});
+
+counters.forEach(counter=>{
+
+counterObserver.observe(counter);
+
+});
+/*==================================================
+        SMOOTH SCROLL
+==================================================*/
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-    anchor.addEventListener("click",function(e){
+anchor.addEventListener("click",e=>{
 
-        e.preventDefault();
+e.preventDefault();
 
-        const target=document.querySelector(this.getAttribute("href"));
+const target =
 
-        if(target){
+document.querySelector(anchor.getAttribute("href"));
 
-            target.scrollIntoView({
+if(target){
 
-                behavior:"smooth"
+target.scrollIntoView({
 
-            });
+behavior:"smooth",
 
-        }
-
-    });
+block:"start"
 
 });
 
-/*=========================================
-SCROLL REVEAL ANIMATION
-=========================================*/
+}
 
-const reveals=document.querySelectorAll(
+});
 
-".section-header,.project-card,.skill-card,.achievement-card,.certificate-card,.timeline-item,.experience-card,.contact-card,.resume-card"
+});
+
+/*==================================================
+        PARALLAX
+==================================================*/
+
+window.addEventListener("mousemove",e=>{
+
+const x = e.clientX/window.innerWidth;
+
+const y = e.clientY/window.innerHeight;
+
+if(gradientOne){
+
+gradientOne.style.transform=
+
+`translate(${x*30}px,${y*30}px)`;
+
+}
+
+if(gradientTwo){
+
+gradientTwo.style.transform=
+
+`translate(${-x*30}px,${-y*30}px)`;
+
+}
+
+});
+document.querySelectorAll(
+
+".skill-card,.project-card,.detail-box,.certificate-card,.achievement-card,.contact-card,.timeline-content,.experience-card"
+
+).forEach(card=>{
+
+card.addEventListener("mousemove",e=>{
+
+const rect=card.getBoundingClientRect();
+
+card.style.setProperty(
+
+"--x",
+
+`${e.clientX-rect.left}px`
 
 );
 
-function reveal(){
+card.style.setProperty(
 
-    reveals.forEach(item=>{
+"--y",
 
-        const windowHeight=window.innerHeight;
+`${e.clientY-rect.top}px`
 
-        const revealTop=item.getBoundingClientRect().top;
-
-        const revealPoint=120;
-
-        if(revealTop<windowHeight-revealPoint){
-
-            item.classList.add("show");
-
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll",reveal);
-
-reveal();
-
-/*=========================================
-COUNTER ANIMATION
-=========================================*/
-
-const counters=document.querySelectorAll(".hero-stats h2");
-
-let started=false;
-
-window.addEventListener("scroll",()=>{
-
-    const heroStats=document.querySelector(".hero-stats");
-
-    if(!heroStats) return;
-
-    const top=heroStats.getBoundingClientRect().top;
-
-    if(top<window.innerHeight && !started){
-
-        started=true;
-
-        counters.forEach(counter=>{
-
-            const text=counter.innerText;
-
-            const value=parseInt(text);
-
-            if(isNaN(value)) return;
-
-            let count=0;
-
-            const speed=value/60;
-
-            const update=()=>{
-
-                count+=speed;
-
-                if(count<value){
-
-                    counter.innerText=Math.floor(count)+"+";
-
-                    requestAnimationFrame(update);
-
-                }
-
-                else{
-
-                    counter.innerText=value+"+";
-
-                }
-
-            }
-
-            update();
-
-        });
-
-    }
+);
 
 });
 
-/*=========================================
-THEME TOGGLE
-=========================================*/
-
-const themeBtn=document.getElementById("theme-toggle");
-
-themeBtn.addEventListener("click",()=>{
-
-    document.body.classList.toggle("light-theme");
-
-    const icon=themeBtn.querySelector("i");
-
-    if(document.body.classList.contains("light-theme")){
-
-        icon.className="fa-solid fa-sun";
-
-        localStorage.setItem("theme","light");
-
-    }
-
-    else{
-
-        icon.className="fa-solid fa-moon";
-
-        localStorage.setItem("theme","dark");
-
-    }
-
 });
 
-if(localStorage.getItem("theme")==="light"){
-
-    document.body.classList.add("light-theme");
-
-    themeBtn.querySelector("i").className="fa-solid fa-sun";
-
-}
-
-/*=========================================
-CURRENT YEAR
-=========================================*/
-
-const year=document.querySelector(".year");
-
-if(year){
-
-    year.innerHTML=new Date().getFullYear();
-
-}
-
-/*=========================================
-PARALLAX EFFECT
-=========================================*/
-
-window.addEventListener("mousemove",(e)=>{
-
-    const gradient=document.querySelector(".gradient");
-
-    if(!gradient) return;
-
-    const x=e.clientX/window.innerWidth;
-
-    const y=e.clientY/window.innerHeight;
-
-    gradient.style.transform=`translate(${x*40}px,${y*40}px)`;
-
-});
-
-/*=========================================
-PREVENT FORM SUBMIT (TEMPORARY)
-=========================================*/
-
+/*==================================================
+        CONSOLE
+==================================================*/
 
 console.log("Portfolio Loaded Successfully 🚀");

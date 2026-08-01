@@ -1,75 +1,83 @@
-/*=========================================
-Typing Effect
-=========================================*/
-
-const words = [
-
-    "Python Full Stack Developer",
-
-    "Flask Developer",
-
-    "FastAPI Developer",
-
-    "Backend Developer",
-
-    "REST API Developer",
-
-    "Software Engineer"
-
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+/*==================================================
+                TYPING EFFECT
+==================================================*/
 
 const typingElement = document.querySelector(".typing");
 
-function typeEffect(){
+if (typingElement) {
 
-    if(!typingElement) return;
+    const words = [
 
-    const currentWord = words[wordIndex];
+        "Python Full Stack Developer",
 
-    if(!deleting){
+        "Flask Developer",
 
-        typingElement.textContent =
-            currentWord.substring(0,charIndex++);
+        "FastAPI Developer",
 
-        if(charIndex > currentWord.length){
+        "Backend Developer",
 
-            deleting = true;
+        "Web Application Developer"
 
-            setTimeout(typeEffect,1800);
+    ];
 
-            return;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-        }
+    function typeEffect() {
 
-    }
+        const currentWord = words[wordIndex];
 
-    else{
+        if (!isDeleting) {
 
-        typingElement.textContent =
-            currentWord.substring(0,charIndex--);
+            typingElement.textContent =
+                currentWord.substring(0, charIndex + 1);
 
-        if(charIndex < 0){
+            charIndex++;
 
-            deleting = false;
+            if (charIndex === currentWord.length) {
 
-            wordIndex++;
+                isDeleting = true;
 
-            if(wordIndex >= words.length){
+                setTimeout(typeEffect, 1700);
 
-                wordIndex = 0;
+                return;
+
+            }
+
+        } else {
+
+            typingElement.textContent =
+                currentWord.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                isDeleting = false;
+
+                wordIndex++;
+
+                if (wordIndex >= words.length) {
+
+                    wordIndex = 0;
+
+                }
 
             }
 
         }
 
+        setTimeout(
+
+            typeEffect,
+
+            isDeleting ? 50 : 90
+
+        );
+
     }
 
-    setTimeout(typeEffect,deleting ? 40 : 90);
+    typeEffect();
 
 }
-
-typeEffect();

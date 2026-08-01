@@ -1,22 +1,27 @@
-/*=========================================
-FADE IN ANIMATION
-=========================================*/
+/*==================================================
+                REVEAL ANIMATION
+==================================================*/
 
 .section-header,
 .project-card,
 .skill-card,
-.achievement-card,
-.certificate-card,
+.detail-box,
 .timeline-item,
 .experience-card,
+.achievement-card,
+.certificate-card,
 .contact-card,
 .resume-card{
 
     opacity:0;
 
-    transform:translateY(50px);
+    transform:translateY(60px);
 
-    transition:all .8s ease;
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
 
 }
 
@@ -28,301 +33,453 @@ FADE IN ANIMATION
 
 }
 
-/*=========================================
-FLOATING SKILL TAGS
-=========================================*/
+/*==================================================
+                STAGGER EFFECT
+==================================================*/
 
-.floating{
+.skill-card:nth-child(2),
+.project-card:nth-child(2),
+.certificate-card:nth-child(2){
 
-    position:absolute;
-
-    padding:10px 18px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    border-radius:40px;
-
-    color:white;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    animation:floating 4s ease-in-out infinite;
+    transition-delay:.1s;
 
 }
 
-.python{
+.skill-card:nth-child(3),
+.project-card:nth-child(3),
+.certificate-card:nth-child(3){
 
-    top:8%;
-
-    left:-10%;
-
-}
-
-.flask{
-
-    top:22%;
-
-    right:-10%;
-
-    animation-delay:1s;
+    transition-delay:.2s;
 
 }
 
-.fastapi{
+.skill-card:nth-child(4),
+.project-card:nth-child(4),
+.certificate-card:nth-child(4){
 
-    bottom:30%;
-
-    left:-12%;
-
-    animation-delay:2s;
+    transition-delay:.3s;
 
 }
 
-.sql{
+.skill-card:nth-child(5),
+.project-card:nth-child(5){
 
-    bottom:8%;
-
-    right:-10%;
-
-    animation-delay:3s;
+    transition-delay:.4s;
 
 }
 
-.html{
+.skill-card:nth-child(6){
 
-    top:55%;
-
-    right:-18%;
+    transition-delay:.5s;
 
 }
 
-.css{
-
-    bottom:50%;
-
-    left:-18%;
-
-}
+/*==================================================
+                FLOATING
+==================================================*/
 
 @keyframes floating{
 
-    0%{
+0%,100%{
 
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
-
-    }
+transform:translateY(0);
 
 }
 
-/*=========================================
-IMAGE GLOW
-=========================================*/
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
 
 .image-card{
 
-    position:relative;
+    animation:floating 5s ease-in-out infinite;
 
 }
 
-.image-card::before{
+/*==================================================
+                GLOW PULSE
+==================================================*/
 
-    content:"";
+@keyframes glow{
 
-    position:absolute;
+0%{
 
-    inset:-8px;
+box-shadow:
 
-    border-radius:30px;
-
-    background:linear-gradient(
-        45deg,
-        #2563eb,
-        #60a5fa,
-        #3b82f6
-    );
-
-    z-index:-1;
-
-    filter:blur(30px);
-
-    opacity:.6;
+0 0 20px rgba(59,130,246,.15);
 
 }
 
-/*=========================================
-BUTTON EFFECT
-=========================================*/
+50%{
+
+box-shadow:
+
+0 0 45px rgba(59,130,246,.45);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px rgba(59,130,246,.15);
+
+}
+
+}
+
+.hero-glow{
+
+animation:glow 4s infinite;
+
+}
+
+/*==================================================
+                ICON BOUNCE
+==================================================*/
+
+.skill-icon:hover,
+.timeline-icon:hover,
+.experience-icon:hover,
+.contact-card i:hover{
+
+animation:bounce .7s;
+
+}
+
+@keyframes bounce{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/*==================================================
+                BUTTON RIPPLE
+==================================================*/
 
 .btn{
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
 }
 
 .btn::before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    top:0;
+width:0;
 
-    left:-100%;
+height:0;
 
-    width:100%;
+left:50%;
 
-    height:100%;
+top:50%;
 
-    background:rgba(255,255,255,.2);
+background:rgba(255,255,255,.25);
 
-    transition:.5s;
+border-radius:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.6s;
 
 }
 
 .btn:hover::before{
 
-    left:100%;
+width:320px;
+
+height:320px;
+
+}
+/*==================================================
+                CARD SHINE
+==================================================*/
+
+.project-card,
+.skill-card,
+.detail-box,
+.certificate-card,
+.achievement-card{
+
+position:relative;
+
+overflow:hidden;
 
 }
 
-/*=========================================
-PROJECT IMAGE ZOOM
-=========================================*/
+.project-card::before,
+.skill-card::before,
+.detail-box::before,
+.certificate-card::before,
+.achievement-card::before{
 
-.project-card{
+content:"";
 
-    overflow:hidden;
+position:absolute;
+
+top:0;
+
+left:-130%;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.08),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+}
+
+.project-card:hover::before,
+.skill-card:hover::before,
+.detail-box:hover::before,
+.certificate-card:hover::before,
+.achievement-card:hover::before{
+
+left:170%;
 
 }
 
-.project-card img{
-
-    transition:transform .6s;
-
-}
-
-.project-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-/*=========================================
-CARD SHADOW
-=========================================*/
-
-.skill-card:hover,
-.detail-box:hover,
-.project-card:hover,
-.certificate-card:hover,
-.achievement-card:hover{
-
-    box-shadow:
-
-    0 20px 40px rgba(37,99,235,.25);
-
-}
-
-/*=========================================
-SOCIAL ICON
-=========================================*/
-
-.social-icons a,
-.footer-social a{
-
-    transition:.3s;
-
-}
+/*==================================================
+                SOCIAL ROTATION
+==================================================*/
 
 .social-icons a:hover,
 .footer-social a:hover{
 
-    transform:translateY(-6px) rotate(360deg);
+transform:
+
+translateY(-8px)
+
+rotate(360deg);
 
 }
 
-/*=========================================
-SCROLL BUTTON
-=========================================*/
+/*==================================================
+                FLOATING BADGES
+==================================================*/
+
+.python{
+
+animation-delay:0s;
+
+}
+
+.flask{
+
+animation-delay:.4s;
+
+}
+
+.fastapi{
+
+animation-delay:.8s;
+
+}
+
+.sql{
+
+animation-delay:1.2s;
+
+}
+
+.html{
+
+animation-delay:1.6s;
+
+}
+
+.css{
+
+animation-delay:2s;
+
+}
+
+.js{
+
+animation-delay:2.4s;
+
+}
+
+.git{
+
+animation-delay:2.8s;
+
+}
+/*==================================================
+                SCROLL TOP
+==================================================*/
 
 .scroll-top{
 
-    animation:updown 2s infinite;
+animation:scrollButton 2s infinite;
 
 }
 
-@keyframes updown{
+@keyframes scrollButton{
 
-    0%{
+0%{
 
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
+transform:translateY(0);
 
 }
 
-/*=========================================
-TEXT GRADIENT
-=========================================*/
+50%{
 
-.hero h1 span{
-
-    background:linear-gradient(
-
-        90deg,
-
-        #60a5fa,
-
-        #2563eb,
-
-        #3b82f6
-
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
+transform:translateY(-8px);
 
 }
 
-/*=========================================
-SECTION HOVER
-=========================================*/
+100%{
 
-section{
+transform:translateY(0);
 
-    transition:.5s;
+}
+
+}
+
+/*==================================================
+                GRADIENT ANIMATION
+==================================================*/
+
+.gradient-one{
+
+animation:gradientMove1 15s linear infinite;
+
+}
+
+.gradient-two{
+
+animation:gradientMove2 18s linear infinite;
+
+}
+
+@keyframes gradientMove1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(60px,-50px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+@keyframes gradientMove2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-70px,50px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+/*==================================================
+                FADE IN
+==================================================*/
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+body{
+
+animation:fadeIn .6s ease;
+
+}
+
+/*==================================================
+                REDUCED MOTION
+==================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*,
+*::before,
+*::after{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
 
 }

@@ -1,98 +1,60 @@
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
 /*=========================================
-LARGE DEVICES (1200px and below)
+Large Desktop (1400px)
 =========================================*/
 
-@media screen and (max-width:1200px){
+@media (max-width:1400px){
 
 .container{
-    width:92%;
+
+    width:min(92%,1200px);
+
 }
 
 .hero h1{
-    font-size:58px;
-}
 
-.hero-container{
-    gap:50px;
-}
+    font-size:68px;
 
-.about-container{
-    gap:50px;
 }
 
 }
 
 /*=========================================
-TABLETS (992px and below)
+Laptop (1200px)
 =========================================*/
 
-@media screen and (max-width:992px){
-
-section{
-    padding:80px 0;
-}
-
-.header .container{
-    height:75px;
-}
-
-.navbar{
-
-    position:fixed;
-
-    top:75px;
-
-    right:-100%;
-
-    width:280px;
-
-    height:100vh;
-
-    background:#08121f;
-
-    transition:.4s;
-
-    padding-top:40px;
-
-    border-left:1px solid rgba(255,255,255,.08);
-
-}
-
-.navbar.active{
-    right:0;
-}
-
-.navbar ul{
-
-    flex-direction:column;
-
-    gap:30px;
-
-    align-items:center;
-
-}
-
-#menu-btn{
-    display:flex;
-}
+@media (max-width:1200px){
 
 .hero-container{
 
     grid-template-columns:1fr;
 
+    gap:70px;
+
     text-align:center;
+
+}
+
+.hero-content{
+
+    order:2;
 
 }
 
 .hero-image{
 
-    order:-1;
+    order:1;
 
 }
 
-.hero p{
+.hero-content p{
 
     margin:auto;
+
+    margin-bottom:35px;
 
 }
 
@@ -118,25 +80,21 @@ section{
 
     grid-template-columns:1fr;
 
+    gap:60px;
+
 }
 
 .about-image{
 
-    max-width:400px;
+    max-width:420px;
 
     margin:auto;
 
 }
 
-.skills-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
 .contact-container{
 
-    grid-template-columns:1fr;
+    grid-template-columns:320px 1fr;
 
 }
 
@@ -148,23 +106,164 @@ section{
 
 }
 
+.github-content p{
+
+    margin:auto;
+
+}
+
 }
 
 /*=========================================
-MOBILE (768px and below)
+Tablet Landscape (992px)
 =========================================*/
 
-@media screen and (max-width:768px){
+@media (max-width:992px){
+
+section{
+
+    padding:90px 0;
+
+}
+
+.header .container{
+
+    height:75px;
+
+}
+
+#menu-btn{
+
+    display:flex;
+
+}
+
+.navbar{
+
+    position:fixed;
+
+    top:75px;
+
+    right:-100%;
+
+    width:300px;
+
+    height:calc(100vh - 75px);
+
+    background:var(--bg-light);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+    border-left:1px solid var(--border);
+
+}
+
+body.light-theme .navbar{
+
+    background:#ffffff;
+
+}
+
+.navbar.active{
+
+    right:0;
+
+}
+
+.navbar ul{
+
+    flex-direction:column;
+
+    padding:40px;
+
+    gap:25px;
+
+}
 
 .hero{
 
-    padding-top:130px;
+    padding-top:140px;
 
 }
 
 .hero h1{
 
-    font-size:46px;
+    font-size:58px;
+
+}
+
+.hero h2{
+
+    font-size:28px;
+
+}
+
+.hero-image{
+
+    margin-bottom:30px;
+
+}
+
+.image-card{
+
+    width:420px;
+
+}
+
+.about-details{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.skills-grid,
+.projects-grid,
+.certificate-grid,
+.achievement-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact-info{
+
+    flex-direction:row;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-card{
+
+    flex:1;
+
+}
+
+.resume-card{
+
+    padding:55px;
+
+}
+
+}
+
+/*=========================================
+Tablet Portrait (768px)
+=========================================*/
+
+@media (max-width:768px){
+
+.hero h1{
+
+    font-size:48px;
 
 }
 
@@ -174,53 +273,33 @@ MOBILE (768px and below)
 
 }
 
-.hero p{
+.hero-content p{
 
-    font-size:16px;
+    font-size:17px;
 
 }
 
 .hero-buttons{
 
-    flex-direction:column;
+display:grid;
 
-    align-items:center;
+width:100%;
+
+gap:15px;
 
 }
 
-.btn{
+.hero-buttons .btn{
 
-    width:220px;
+width:100%;
 
-    text-align:center;
+max-width:260px;
+
+justify-self:center;
 
 }
 
 .about-details{
-
-    grid-template-columns:1fr;
-
-}
-
-.skills-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.projects-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.achievement-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.certificate-grid{
 
     grid-template-columns:1fr;
 
@@ -238,33 +317,65 @@ MOBILE (768px and below)
 
 }
 
-.experience-card{
+.timeline-icon{
+
+    margin-bottom:15px;
+
+}
+
+.skills-grid{
 
     grid-template-columns:1fr;
 
 }
 
-.experience-left{
+.projects-grid{
 
-    justify-content:flex-start;
+    grid-template-columns:1fr;
+
+}
+
+.certificate-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.achievement-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.github-card{
+
+    padding:40px;
 
 }
 
 .resume-card{
 
-    padding:45px 25px;
+    padding:45px;
 
 }
 
-.resume-card h2{
+.experience-card{
 
-    font-size:30px;
-
-}
-
-.contact-card{
+    grid-template-columns:1fr;
 
     text-align:center;
+
+}
+
+.experience-left{
+
+    justify-content:center;
+
+}
+
+.experience-right ul{
+
+    text-align:left;
 
 }
 
@@ -274,35 +385,119 @@ MOBILE (768px and below)
 
 }
 
+}
+
+/*=========================================
+Large Mobile (576px)
+=========================================*/
+
+@media (max-width:576px){
+
+.container{
+
+    width:92%;
+
+}
+
+.hero{
+
+    padding-top:120px;
+
+}
+
+.hero-content h1{
+
+    font-size:40px;
+
+}
+
+.hero-content h2{
+
+    font-size:22px;
+
+}
+
+.section-header h2{
+
+    font-size:34px;
+
+}
+
+.image-card{
+
+    width:100%;
+
+}
+
+.hero-stats{
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.stat-card{
+
+    width:100%;
+
+}
+
+.contact-info{
+
+    flex-direction:column;
+
+}
+
+.contact-card{
+
+    width:100%;
+
+}
+
+.resume-card{
+
+    padding:35px 25px;
+
+}
+
+.resume-card h2{
+
+    font-size:32px;
+
+}
+
+.github-card{
+
+    padding:35px 25px;
+
+}
+
+.github-content h2{
+
+    font-size:30px;
+
+}
+
 .scroll-top{
 
-    width:45px;
+    right:18px;
 
-    height:45px;
-
-    right:15px;
-
-    bottom:15px;
+    bottom:18px;
 
 }
 
 }
 
 /*=========================================
-SMALL MOBILE (576px and below)
+Small Mobile (420px)
 =========================================*/
 
-@media screen and (max-width:576px){
-
-.container{
-
-    width:94%;
-
-}
+@media (max-width:420px){
 
 .hero h1{
 
-    font-size:38px;
+    font-size:34px;
 
 }
 
@@ -314,39 +509,15 @@ SMALL MOBILE (576px and below)
 
 .hero p{
 
-    font-size:15px;
+    font-size:16px;
 
 }
 
-.section-header h2{
+.hero-badge{
 
-    font-size:32px;
+    font-size:13px;
 
-}
-
-.project-content{
-
-    padding:22px;
-
-}
-
-.project-content h3{
-
-    font-size:22px;
-
-}
-
-.resume-card{
-
-    padding:35px 20px;
-
-}
-
-.contact-form input,
-
-.contact-form textarea{
-
-    padding:15px;
+    padding:10px 16px;
 
 }
 
@@ -356,57 +527,48 @@ SMALL MOBILE (576px and below)
 
 }
 
-.social-icons{
+.navbar{
 
-    gap:12px;
-
-}
-
-.social-icons a{
-
-    width:45px;
-
-    height:45px;
+    width:100%;
 
 }
 
-}
+.header-buttons{
 
-/*=========================================
-EXTRA SMALL (400px and below)
-=========================================*/
-
-@media screen and (max-width:400px){
-
-.hero h1{
-
-    font-size:32px;
+    gap:10px;
 
 }
 
-.hero h2{
+#theme-toggle,
+#menu-btn{
 
-    font-size:18px;
+    width:44px;
 
-}
-
-.badge{
-
-    font-size:12px;
-
-    padding:8px 15px;
+    height:44px;
 
 }
 
-.logo{
+.experience-date{
 
-    font-size:24px;
+    font-size:13px;
 
 }
 
-.section-header h2{
+.project-buttons{
 
-    font-size:28px;
+    flex-direction:column;
+
+}
+
+.project-buttons a{
+
+    width:100%;
+
+}
+
+.floating{
+
+    display:none;
 
 }
 

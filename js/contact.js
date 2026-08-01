@@ -1,69 +1,66 @@
-/*=====================================
-EmailJS Contact Form
-=====================================*/
+/*==================================================
+                CONTACT FORM
+==================================================*/
 
 const contactForm = document.querySelector(".contact-form");
 
-if(contactForm){
+if (contactForm) {
 
-contactForm.addEventListener("submit",function(e){
+    contactForm.addEventListener("submit", function (e) {
 
-e.preventDefault();
+        e.preventDefault();
 
-const btn=this.querySelector("button");
+        const button = this.querySelector("button");
 
-btn.innerHTML="Sending...";
+        const originalText = button.innerHTML;
 
-btn.disabled=true;
+        button.disabled = true;
 
-const params={
+        button.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-name:this.querySelector('input[type="text"]').value,
+        emailjs.sendForm(
 
-email:this.querySelector('input[type="email"]').value,
+            "service_mouto5r",
 
-subject:this.querySelectorAll("input")[2].value,
+            "template_1mbwloj",
 
-message:this.querySelector("textarea").value
+            this
 
-};
+        )
 
-emailjs.send(
+        .then(() => {
 
-"service_mouto5r",
+            button.innerHTML =
+                '<i class="fa-solid fa-check"></i> Message Sent';
 
-"template_1mbwloj",
+            this.reset();
 
-params
+            setTimeout(() => {
 
-)
+                button.disabled = false;
 
-.then(()=>{
+                button.innerHTML = originalText;
 
-btn.innerHTML="Message Sent ✓";
+            }, 2500);
 
-this.reset();
+        })
 
-setTimeout(()=>{
+        .catch(() => {
 
-btn.innerHTML="Send Message";
+            button.innerHTML =
+                '<i class="fa-solid fa-circle-exclamation"></i> Failed';
 
-btn.disabled=false;
+            setTimeout(() => {
 
-},2500);
+                button.disabled = false;
 
-})
+                button.innerHTML = originalText;
 
-.catch(()=>{
+            }, 2500);
 
-btn.innerHTML="Try Again";
+        });
 
-btn.disabled=false;
-
-alert("Something went wrong.");
-
-});
-
-});
+    });
 
 }
